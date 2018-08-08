@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+	{% if user.is_authenticated %}
+	<p>Hello</p>
+	<p>welcome {{ user.username }}</p>
+	<!-- <p>Your IP address is: {{ request.get_host }}</p> -->
+	<!-- <p>Your IP address is: {{ request.META.REMOTE_ADDR }}</p> -->
+	<p>Your IP address is: {{ get_user_ip }}</p>
+	<p><a href="/logout">Logout</a></p>
+	{% else %}
+	<p><a href="/login">Login</a></p>
+	<p><a href="/register"><Register/a></p>
+	{% endif %}
+</body>
+</html>
